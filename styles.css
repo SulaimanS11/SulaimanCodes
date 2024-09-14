@@ -71,3 +71,36 @@ span{
     color:#ff154c;
     display: none;
 }
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+}
+
+home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+.home-circle1 {
+    position: absolute;
+    background-color: #ff154c;
+    border-radius: 50%;
+    height: 30vw;
+    width: 30vw;
+    bottom: 10rem;
+    right: 0;
+    z-index: -1;
+}
+.home-circle2 {
+    position: absolute;
+    background-color: #ff154c;
+    border-radius: 50%;
+    height: 25vw;
+    width: 25vw;
+    margin: 0 auto;
+    top: 0;
+    right: 50px;
+    z-index: -1;
+}
