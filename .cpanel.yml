@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sulanzns/public_html/
+    - home/sulanzns/repositories -R SulaimanCodes $DEPLOYPATH
