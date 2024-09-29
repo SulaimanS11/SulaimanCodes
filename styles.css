@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --Primary-Col:turquoise;
+
+}
 
 * {
     margin: 0;
@@ -49,7 +53,7 @@ body {
 }
 
 span{
-    color:turquoise;
+    color:var(--Primary-Col);
 }
 
 .navbar a{
@@ -62,13 +66,13 @@ span{
 
 .navbar a:hover,
 .navbar a.active{
-    color: turquoise;
-    border-bottom: 3px solid turquoise;
+    color: var(--Primary-Col);
+    border-bottom: 3px solid var(--Primary-Col);
 }
 
 #menu-icon {
     font-size: 3.6rem;
-    color:turquoise;
+    color:var(--Primary-Col);
     display: none;
 }
 
@@ -86,7 +90,7 @@ section {
 
 .home-circle1 {
     position: absolute;
-    background-color: turquoise;
+    background-color: var(--Primary-Col);
     border-radius: 50%;
     height: 30vw;
     width: 30vw;
@@ -96,7 +100,7 @@ section {
 }
 .home-circle2 {
     position: absolute;
-    background-color: turquoise;
+    background-color: var(--Primary-Col);
     border-radius: 50%;
     height: 25vw;
     width: 25vw;
@@ -131,7 +135,7 @@ section {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    border: 20px solid turquoise ;
+    border: 20px solid var(--Primary-Col) ;
 }
 
 .home-img img {
@@ -158,14 +162,14 @@ section {
     background: transparent;
     font-size: 2.5rem;
     border-radius: 4rem;
-    border: 0.2rem solid turquoise;
-    color: turquoise;
+    border: 0.2rem solid var(--Primary-Col);
+    color: var(--Primary-Col);
     transition: 0.3s ease;
     margin: 1rem 1rem 1rem 0;
 }
 
 .social-Icons a:hover {
-    background: turquoise;
+    background: var(--Primary-Col);
     color:white;
     transform: scale(1.3)translateY(-5px);
 }
@@ -173,7 +177,7 @@ section {
 .button {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background: turquoise;
+    background: var(--Primary-Col);
     border-radius: 4rem;
     font-size: 1.2rem;
     color: white;
@@ -186,8 +190,8 @@ section {
 
 .button:hover {
     background: transparent;
-    color: turquoise;
-    border: 2px solid turquoise;
+    color: var(--Primary-Col);
+    border: 2px solid var(--Primary-Col);
     transform: scale(1.05);
 }
 
