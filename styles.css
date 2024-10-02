@@ -118,11 +118,11 @@ section {
     font-weight: 700;
 }
 
-.home-content h3:nth-of-type(2) {
+/* .home-content h3:nth-of-type(2) {
     margin-bottom: 2rem;
     font-size: 5rem;
 
-}
+} */
 
 .home-content h1 {
     font-size: 6rem;
