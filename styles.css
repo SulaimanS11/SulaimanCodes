@@ -559,6 +559,9 @@ section {
 }
 
 .skill-card {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    cursor: pointer;
     position: relative;
     width: 30rem;
     height: 35rem;
@@ -589,8 +592,14 @@ section {
 .skill-card:hover .card-front {
     transform: rotateY(-180deg);
 }
-
 .skill-card:hover .card-back {
+    transform: rotateY(0);
+}
+
+.skill-card.flipped .card-front { /* line 589 */
+    transform: rotateY(-180deg);
+}
+.skill-card.flipped .card-back {  /* line 593 */
     transform: rotateY(0);
 }
 
@@ -657,7 +666,7 @@ section {
 }
 
 /* Responsive adjustments for Skills section */
-@media (max-width: 1200px) {
+@media (max-width: 480px) {
     .skills-container {
         justify-content: center;
     }
