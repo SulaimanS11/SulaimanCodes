@@ -596,10 +596,10 @@ section {
     transform: rotateY(0);
 }
 
-.skill-card.flipped .card-front { /* line 589 */
+.skill-card.flipped .card-front {
     transform: rotateY(-180deg);
 }
-.skill-card.flipped .card-back {  /* line 593 */
+.skill-card.flipped .card-back {  
     transform: rotateY(0);
 }
 
@@ -695,21 +695,37 @@ section {
     .card-front, .card-back {
         padding: 2rem;
     }
-    
-    /* For touch devices, show both sides */
-    .skill-card .card-front {
-        position: relative;
-        transform: none;
+}
+
+/* specific media query for mobile devices */
+/* This media query targets devices with a maximum width of 768px and no hover capability */
+
+@media (max-width: 768px) and (hover: none) {
+    .skill-card {
+        height: auto;
+        perspective: none;
     }
     
-    .skill-card .card-back {
+    .card-front, .card-back {
         position: relative;
-        transform: none;
-        margin-top: 2rem;
+        backface-visibility: visible;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
     }
     
-    .skill-card:hover .card-front {
-        transform: none;
+    .card-back {
+        transform: rotateY(0);
+        display: none;
+    }
+    
+    .skill-card.flipped .card-front {
+        display: none;
+        transform: rotateY(0);
+    }
+    
+    .skill-card.flipped .card-back {
+        display: flex;
+        transform: rotateY(0);
     }
 }
 
