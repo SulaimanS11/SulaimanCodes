@@ -60,9 +60,18 @@ window.addEventListener('scroll', () => {
     });
 });
 
-
-    document.querySelectorAll('.skill-card').forEach(card => {
+// Improve card flipping for all devices
+document.querySelectorAll('.skill-card').forEach(card => {
+    // Check if it's a touch device
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    if (isTouchDevice) {
+        // For touch devices
         card.addEventListener('click', () => {
             card.classList.toggle('flipped');
-    });
+        });
+    } else {
+        // For non-touch devices, keep the hover functionality
+        // No need to add event listeners as CSS handles it
+    }
 });
