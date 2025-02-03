@@ -1,4 +1,13 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html.touch-device .skill-card:hover .card-front {
+    transform: rotateY(0deg);
+}
+
+html.touch-device .skill-card:hover .card-back {
+    transform: rotateY(180deg);
+}
 
 :root {
     --Primary-Col: turquoise;
@@ -702,30 +711,41 @@ section {
 
 @media (max-width: 768px) and (hover: none) {
     .skill-card {
-        height: auto;
-        perspective: none;
+        perspective: 100rem; /* Keep some perspective for the animation */
+        height: 35rem; /* Fixed height is important for proper flipping */
     }
     
     .card-front, .card-back {
-        position: relative;
-        backface-visibility: visible;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
+        position: absolute; /* Keep absolute positioning */
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Ensure backface visibility works on all browsers */
+        backface-visibility: hidden;
+        transition: transform 0.6s ease; /* Slightly faster transition for mobile */
+    }
+    
+    /* For non-flipped state, front is visible and back is rotated */
+    .card-front {
+        transform: rotateY(0deg);
     }
     
     .card-back {
-        transform: rotateY(0);
-        display: none;
+        transform: rotateY(180deg);
     }
     
+    /* When flipped, apply these transforms */
     .skill-card.flipped .card-front {
-        display: none;
-        transform: rotateY(0);
+        transform: rotateY(180deg);
     }
     
     .skill-card.flipped .card-back {
-        display: flex;
-        transform: rotateY(0);
+        transform: rotateY(0deg);
+    }
+    
+    /* Disable hover effect on mobile */
+    .skill-card:hover .card-front,
+    .skill-card:hover .card-back {
+        transform: none;
     }
 }
 
