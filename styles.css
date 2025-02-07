@@ -1,12 +1,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Only disable hover on touch devices */
 html.touch-device .skill-card:hover .card-front {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) !important;
 }
 
 html.touch-device .skill-card:hover .card-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) !important;
+}
+
+/* Make sure hover works on desktop */
+@media (hover: hover) {
+    .skill-card:hover .card-front {
+        transform: rotateY(-180deg);
+    }
+    
+    .skill-card:hover .card-back {
+        transform: rotateY(0);
+    }
 }
 
 :root {
