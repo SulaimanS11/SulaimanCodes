@@ -1,0 +1,144 @@
+﻿.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 1.5rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.dark-mode.header.scrolled {
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 2.6rem;
+    color: var(--text-color);
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--Primary-Col);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--Primary-Col);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--Primary-Col);
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .header.scrolled {
+        padding: 1.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 4%;
+    }
+
+    .header.scrolled {
+        padding: 1rem 4%;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: all 0.3s ease;
+    }
+
+    .dark-mode .navbar {
+        background: rgba(30, 30, 30, 0.9);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .navbar a::after {
+        display: none;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        border-bottom: 3px solid var(--Primary-Col);
+    }
+}
