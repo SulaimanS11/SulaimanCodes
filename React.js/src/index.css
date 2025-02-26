@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Base colors */
+  --Primary-Col: turquoise;
+  --Primary-Col-dark: #00a8a8;
+
+  /* Light mode */
+  --background-color: #fcfcfc;
+  --secondary-bg: #f8f9fa;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --input-bg: #f8f9fa;
+  --pill-bg: rgba(0, 0, 0, 0.05);
+  --pill-hover-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.8);
+
+  /* Transitions */
+  --transition: all 0.3s ease;
+
+  /* Dark mode */
+  --dark-bg: #121212;
+  --dark-card-bg: #1e1e1e;
+  --dark-input-bg: #2d2d2d;
+  --dark-text: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 10px base font size for easier rem calculations */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fcfcfc;
+  color: black;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 0.3rem;
+  background: var(--Primary-Col);
+}
+
+.color-primary {
+  color: var(--Primary-Col);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 10rem 4% 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .skills {
+    padding-top: 12rem;
+  }
+
+  .skill-card {
+    width: 85%;
+    max-width: 35rem;
+    height: auto;
+    min-height: 32rem;
+  }
+
+  .card-front, .card-back {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .skill-card {
+    width: 100%;
+  }
+
+  .card-front i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-front h3, .card-back h4 {
+    font-size: 1.8rem;
+  }
+
+  .pill {
+    font-size: 1.2rem;
+  }
+
+  .card-back ul {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  html {
+    font-size: 45%;
+  }
+}
