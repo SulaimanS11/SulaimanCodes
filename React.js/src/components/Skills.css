@@ -1,0 +1,291 @@
+﻿.skills {
+    background-color: var(--secondary-bg);
+    padding-top: 15rem;
+    transition: var(--transition);
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.skill-card {
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    width: 30rem;
+    height: 35rem;
+    perspective: 150rem;
+    margin-bottom: 3rem;
+    opacity: 0; /* Start invisible for animation */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 2rem var(--shadow-color);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s ease;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.skill-card.flipped .card-front {
+    transform: rotateY(-180deg);
+}
+
+.skill-card.flipped .card-back {
+    transform: rotateY(0);
+}
+
+.card-front i {
+    font-size: 5rem;
+    color: var(--Primary-Col);
+    margin-bottom: 2rem;
+}
+
+.card-front h3 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pill {
+    font-size: 1.4rem;
+    background-color: var(--pill-bg);
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    transition: 0.3s ease;
+    color: var(--text-color);
+}
+
+.pill:hover {
+    background-color: var(--Primary-Col);
+    color: var(--pill-hover-color);
+    transform: translateY(-3px);
+}
+
+.card-back h4 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--Primary-Col);
+    text-align: center;
+}
+
+.card-back ul {
+    list-style-position: inside;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.card-back ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    list-style-type: none;
+}
+
+.card-back ul li::before {
+    content: "•";
+    color: var(--Primary-Col);
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+}
+
+.skills-progress {
+    margin-top: 6rem;
+    padding: 3rem;
+    background-color: var(--card-bg);
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 2rem var(--shadow-color);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0; /* Start invisible for animation */
+}
+
+.skills-progress h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.progress-item {
+    width: 100%;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.progress-bar {
+    height: 1rem;
+    background-color: var(--pill-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--Primary-Col);
+    border-radius: 1rem;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+    animation: progressFill 1.5s ease-out forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+@keyframes progressFill {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .skills-container {
+        justify-content: center;
+    }
+
+    .skill-card {
+        width: 28rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 3.5rem;
+    }
+
+    .skills {
+        padding-top: 12rem;
+    }
+
+    .skill-card {
+        width: 85%;
+        max-width: 35rem;
+        height: auto;
+        min-height: 32rem;
+    }
+
+    .card-front, .card-back {
+        padding: 2rem;
+    }
+
+    .skills-progress {
+        margin-top: 4rem;
+        padding: 2rem;
+    }
+
+    .skills-progress h3 {
+        font-size: 2rem;
+    }
+
+    .progress-info {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 3rem;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+
+    .card-front i {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-front h3, .card-back h4 {
+        font-size: 1.8rem;
+    }
+
+    .pill {
+        font-size: 1.2rem;
+    }
+
+    .card-back ul {
+        font-size: 1.3rem;
+    }
+
+    .progress-bar {
+        height: 0.8rem;
+    }
+
+    .progress-container {
+        gap: 1.5rem;
+    }
+}
+
+/* Dark mode specific adjustments */
+.dark-mode .card-front {
+    background-color: #2d2d2d !important;
+}
+
+.dark-mode .card-back,
+.dark-mode .skills-progress {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .progress-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation classes will be applied from the global styles */
+.animate-fadeIn.skill-card,
+.animate-fadeIn.skills-progress {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Add a subtle hover effect to the progress bars */
+.progress-item:hover .progress-fill {
+    filter: brightness(1.1);
+}
+
+/* Add animation for when the skill card is in view */
+.skill-card.in-view {
+    animation: fadeIn 0.5s ease forwards;
+}
