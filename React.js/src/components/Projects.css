@@ -1,0 +1,239 @@
+﻿.projects {
+    background-color: var(--background-color);
+    padding-top: 15rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--Primary-Col);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 2rem var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* Start invisible for animation */
+}
+
+.project-card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 3rem var(--shadow-color);
+}
+
+.project-img {
+    position: relative;
+    width: 100%;
+    height: 25rem;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-overlay.active,
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3 {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.project-overlay p {
+    font-size: 1.4rem;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tag {
+    font-size: 1.1rem;
+    background: rgba(64, 224, 208, 0.2);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-btn {
+    font-size: 1.3rem;
+    background: var(--Primary-Col);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background: white;
+    color: var(--Primary-Col);
+    transform: scale(1.05);
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.load-more-btn {
+    background: transparent;
+    color: var(--Primary-Col);
+    font-size: 1.6rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--Primary-Col);
+    border-radius: 3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background: var(--Primary-Col);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.load-more-btn i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.load-more-btn:hover i {
+    transform: translateY(3px);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding-top: 12rem;
+    }
+
+    .filter-container {
+        margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+        font-size: 1.3rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .project-overlay h3 {
+        font-size: 2rem;
+    }
+
+    .project-overlay p {
+        font-size: 1.3rem;
+    }
+
+    .project-btn {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-img {
+        height: 22rem;
+    }
+
+    .project-overlay h3 {
+        font-size: 1.8rem;
+    }
+
+    .project-overlay p {
+        font-size: 1.2rem;
+    }
+
+    .load-more-btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+    }
+}
