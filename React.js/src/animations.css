@@ -1,0 +1,208 @@
+﻿/* Global Animation Definitions */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide In Up Animation */
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade In Animation Class */
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scale In Animation Class */
+.animate-scaleIn {
+    animation: scaleIn 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+/* Slide In Right Animation Class */
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+/* Slide In Left Animation Class */
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Slide In Up Animation Class */
+.animate-slideInUp {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+/* Animation Delay Classes */
+.animate-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+    animation-delay: 0.5s;
+}
+
+.animate-delay-600 {
+    animation-delay: 0.6s;
+}
+
+.animate-delay-700 {
+    animation-delay: 0.7s;
+}
+
+.animate-delay-800 {
+    animation-delay: 0.8s;
+}
+
+.animate-delay-900 {
+    animation-delay: 0.9s;
+}
+
+.animate-delay-1000 {
+    animation-delay: 1s;
+}
+
+/* For elements that should be initially invisible */
+.animate-fadeIn,
+.animate-scaleIn,
+.animate-slideInRight,
+.animate-slideInLeft,
+.animate-slideInUp,
+[class*='animate-'] {
+    opacity: 0;
+}
+
+/* Animation durations */
+.animate-duration-fast {
+    animation-duration: 0.5s;
+}
+
+.animate-duration-slow {
+    animation-duration: 1.2s;
+}
+
+/* Animation interaction variants */
+.animate-on-hover {
+    opacity: 1;
+    animation: none;
+}
+
+.animate-on-hover:hover {
+    animation-play-state: running;
+}
+
+/* For elements that should animate when they come into view */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+}
+
+/* Animation variants */
+.animate-bounce {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Make sure animations don't run for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn,
+    .animate-scaleIn,
+    .animate-slideInRight,
+    .animate-slideInLeft,
+    .animate-slideInUp,
+    [class*='animate-'] {
+        animation: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
