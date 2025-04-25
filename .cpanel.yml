@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sulanzns/public_html/
+    - export DEPLOYPATH=/home/sulaaxkb/public_html/
     - /bin/cp -R SulaimanCodes $DEPLOYPATH
