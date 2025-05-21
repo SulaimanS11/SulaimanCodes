@@ -33,6 +33,7 @@ html {
 body {
     background: #fcfcfc;
     color: black;
+    padding: 2rem;
 }
 
 .header {
@@ -767,5 +768,249 @@ section {
     
     .card-back ul {
         font-size: 1.3rem;
+    }
+}
+
+/* Projects Section Styling */
+.projects {
+    background-color: #f8f9fa;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 0.3rem;
+    background: var(--Primary-Col);
+}
+
+.sub-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    color: #666;
+}
+
+span {
+    color: var(--Primary-Col);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.project-card {
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 35rem;
+    perspective: 150rem;
+    margin-bottom: 3rem;
+}
+
+.project-card.flipped .card-front {
+    transform: rotateY(-180deg);
+}
+
+.project-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.8s ease;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: white;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-front {
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.card-back h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--Primary-Col);
+}
+
+.card-back p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--Primary-Col);
+    color: white;
+    border-radius: 3rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background: #1aa3a3;
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1.5rem rgba(64, 224, 208, 0.3);
+}
+
+.project-btn i {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .project-card {
+        height: 32rem;
+        max-width: 35rem;
+        margin: 0 auto 2rem;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.6rem;
+    }
+
+    .card-back {
+        padding: 2rem;
+    }
+
+    .card-back h3 {
+        font-size: 2rem;
+    }
+
+    .card-back p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 0.5rem;
+    }
+
+    .project-card {
+        height: 30rem;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .project-title {
+        font-size: 1.6rem;
+    }
+
+    .project-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile-specific flip behavior */
+@media (max-width: 768px) and (hover: none) {
+    .project-card {
+        perspective: 100rem;
+    }
+
+    .card-front, .card-back {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+    }
+
+    .card-front {
+        transform: rotateY(0deg);
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+    }
+
+    .project-card.flipped .card-front {
+        transform: rotateY(180deg);
+    }
+
+    .project-card.flipped .card-back {
+        transform: rotateY(0deg);
     }
 }

@@ -91,3 +91,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//Projects section - Show more functionality
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Click-to-flip functionality for all devices
+    projectCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // First, unflip any other cards
+            projectCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('flipped')) {
+                    otherCard.classList.remove('flipped');
+                }
+            });
+            
+            // Toggle the clicked card
+            this.classList.toggle('flipped');
+            
+            // Prevent event bubbling
+            e.stopPropagation();
+        });
+    });
+    
+    // Add a click handler to the document to close all cards when clicking elsewhere
+    document.addEventListener('click', function() {
+        projectCards.forEach(card => {
+            if (card.classList.contains('flipped')) {
+                card.classList.remove('flipped');
+            }
+        });
+    });
+
+    // Prevent card from closing when clicking on links
+    const projectLinks = document.querySelectorAll('.project-btn');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+});
