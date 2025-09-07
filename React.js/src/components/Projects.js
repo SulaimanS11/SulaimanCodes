@@ -58,57 +58,54 @@ const Projects = () => {
     const { darkMode } = useContext(ThemeContext);
     
     const projectsData = [
-        // {
-        //     title: "AI-Powered Study Assistant",
-        //     description: "A machine learning application that helps students optimize their study schedules based on cognitive science principles.",
-        //     image: "/api/placeholder/600/400", // Replace with your actual image path
-        //     technologies: ["Python", "TensorFlow", "Flask", "React"],
-        //     category: ["machine-learning", "web-app"],
-        //     demoLink: "https://study-assistant-demo.com",
-        //     codeLink: "https://github.com/SulaimanS11/study-assistant"
-        // },
-        // {
-        //     title: "Quantum Algorithm Simulator",
-        //     description: "A visualization tool for understanding and simulating basic quantum computing algorithms.",
-        //     image: "/api/placeholder/600/400", // Replace with your actual image path
-        //     technologies: ["JavaScript", "D3.js", "React", "Node.js"],
-        //     category: ["web-app", "visualization"],
-        //     demoLink: "https://quantum-sim.demo.com",
-        //     codeLink: "https://github.com/SulaimanS11/quantum-sim"
-        // },
-        // {
-        //     title: "Neural Network From Scratch",
-        //     description: "Implementation of a neural network framework without using any machine learning libraries, for educational purposes.",
-        //     image: "/api/placeholder/600/400", // Replace with your actual image path
-        //     technologies: ["Python", "NumPy", "Matplotlib"],
-        //     category: ["machine-learning", "data-science"],
-        //     codeLink: "https://github.com/SulaimanS11/neural-net-scratch"
-        // },
-        // {
-        //     title: "Portfolio Website",
-        //     description: "This responsive portfolio website built with React and modern web technologies.",
-        //     image: "/api/placeholder/600/400", // Replace with your actual image path
-        //     technologies: ["React", "CSS3", "JavaScript"],
-        //     category: ["web-app", "frontend"],
-        //     codeLink: "https://github.com/SulaimanS11/portfolio"
-        // },
-        // {
-        //     title: "Brain Activity Visualizer",
-        //     description: "A tool for visualizing EEG data and brain activity patterns using WebGL and 3D rendering.",
-        //     image: "/api/placeholder/600/400",
-        //     technologies: ["Three.js", "WebGL", "JavaScript", "Python"],
-        //     category: ["visualization", "data-science", "neuroscience"],
-        //     demoLink: "https://brain-viz-demo.com",
-        //     codeLink: "https://github.com/SulaimanS11/brain-viz"
-        // },
-        // {
-        //     title: "Automated Circuit Designer",
-        //     description: "An application that uses genetic algorithms to optimize electronic circuit layouts.",
-        //     image: "/api/placeholder/600/400",
-        //     technologies: ["Java", "JGAP", "JavaFX"],
-        //     category: ["machine-learning", "electronics"],
-        //     codeLink: "https://github.com/SulaimanS11/circuit-designer"
-        // }
+        {
+            title: "BioBuddyAI",
+            description: "AI-powered biology learning assistant that helps students understand complex biological concepts through interactive conversations and personalized explanations.",
+            image: "/imgs/biobuddyai.png",
+            technologies: ["Python", "Flask", "OpenAI API", "HTML5", "CSS3", "JavaScript"],
+            category: ["machine-learning", "web-app"],
+            codeLink: "https://github.com/SulaimanS11/BioBuddyAI"
+        },
+        {
+            title: "Predictive Analysis Inventory Tracker",
+            description: "Machine learning system that predicts inventory stock-outs and automates reordering through Flask-based API integration.",
+            image: "/imgs/sales_pait.png",
+            technologies: ["Python", "Flask", "Scikit-Learn", "Pandas", "MySQL", "Docker"],
+            category: ["machine-learning", "web-app"],
+            codeLink: "https://github.com/SulaimanS11/Predictive-Analysis-Inventory-Tracker"
+        },
+        {
+            title: "Java Resume Builder",
+            description: "Full-stack web application built with Spring Boot that allows users to create, customize, and manage professional resumes with secure authentication.",
+            image: "/imgs/resume-builder.png",
+            technologies: ["Java", "Spring Boot", "MySQL", "HTML5", "CSS3", "JavaScript"],
+            category: ["web-app", "full-stack"],
+            codeLink: "https://github.com/SulaimanS11/JPA-ResumeApplication"
+        },
+        {
+            title: "Computer Vision Face Tracker",
+            description: "Real-time face detection and tracking system using OpenCV and machine learning algorithms for accurate facial recognition and movement tracking.",
+            image: "/imgs/face-tracker.png",
+            technologies: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
+            category: ["machine-learning", "computer-vision"],
+            codeLink: "https://github.com/SulaimanS11/FaceRecognition1"
+        },
+        {
+            title: "Personal Portfolio Website",
+            description: "Comprehensive digital resume featuring responsive design, dark mode support, and interactive elements. Includes contact form with Node.js backend and automated deployment pipelines.",
+            image: "/imgs/portfolio-website.png",
+            technologies: ["JavaScript", "HTML5", "CSS3", "React.js", "Node.js", "GitHub Actions", "Vercel"],
+            category: ["web-app", "frontend", "full-stack"],
+            codeLink: "https://github.com/SulaimanS11/SulaimanCodes"
+        },
+        {
+            title: "Danger Scanner",
+            description: "AI-powered safety application that uses Python and Gemini API to identify dangerous animals in real-time and alert users to potential threats in their environment.",
+            image: "/imgs/danger-scanner.png",
+            technologies: ["Python", "Gemini API", "Computer Vision", "AI", "Real-time Processing"],
+            category: ["machine-learning", "ai", "safety"],
+            codeLink: "https://github.com/SulaimanS11/BB_pi"
+        }
     ];
 
     // Filter categories extracted from projects
